@@ -1,0 +1,524 @@
+﻿/* ===================================
+   Reset & Global
+=================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #f9f9f9;
+    background: #031540;
+}
+
+/* ===================================
+   Header
+=================================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 50px;
+    background: rgba(3, 21, 64, 0.85);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+/* Logo + Image Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* reduce space between image and text */
+}
+
+/* Logo Text */
+.header .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #DFBD3B;
+    text-decoration: none;
+}
+
+/* Header Image next to Logo */
+.header-image img {
+    height: 100px; /* small size */
+    width: auto;
+    margin-left: 2px; /* space from text */
+    border-radius: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Navbar */
+.header .navbar {
+    display: flex;
+    gap: 25px;
+}
+
+    .header .navbar a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+        .header .navbar a.active,
+        .header .navbar a:hover {
+            color: #DFBD3B;
+        }
+
+/* Hamburger Icon */
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #DFBD3B;
+}
+
+/* ===================================
+   Home Section with Video Background
+=================================== */
+.home {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: 2;
+}
+
+.home-content {
+    position: relative;
+    z-index: 3;
+    color: white;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+    .home-content h1 {
+        font-size: 3rem;
+        margin-bottom: 15px;
+    }
+
+    .home-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+
+/* Welcome Messages */
+.welcome-container {
+    position: relative;
+    z-index: 3;
+    max-width: 700px;
+    margin: 20px auto 0;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.welcome-message {
+    position: relative;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+    .welcome-message.arabic-text {
+        direction: rtl;
+        color: #DFBD3B;
+        font-weight: 600;
+    }
+
+    .welcome-message.english-text {
+        direction: ltr;
+        color: #ffffff;
+        font-weight: 700;
+    }
+
+/* Fade In/Out Animation */
+.fade-in {
+    animation: fadeIn 1s forwards;
+}
+
+.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+/* ===================================
+   Contact Card Section
+=================================== */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+    flex-wrap: wrap;
+}
+
+.contact-card {
+    background: rgba(3, 21, 64, 0.9);
+    color: #f9f9f9;
+    border-radius: 16px;
+    padding: 30px 25px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .contact-card:hover {
+        transform: translateY(-5px);
+        background: rgba(3, 21, 64, 1);
+        box-shadow: 0 12px 35px rgba(0,0,0,0.5);
+    }
+
+    .contact-card h3 {
+        font-size: 1.5rem;
+        color: #DFBD3B;
+        margin-bottom: 15px;
+    }
+
+    .contact-card p {
+        font-size: 0.95rem;
+        margin: 6px 0;
+        color: #eaeaea;
+    }
+
+.map-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 22px;
+    background: #DFBD3B;
+    color: #031540;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+    .map-link:hover {
+        background: #fff;
+        color: #031540;
+        transform: scale(1.05);
+    }
+
+.map-frame {
+    width: 100%;
+    height: 350px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ===================================
+   Social Links
+=================================== */
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+    .social-links a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        background: #DFBD3B;
+        color: #031540;
+        border-radius: 50%;
+        font-size: 28px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+        .social-links a:hover {
+            background: #fff;
+            color: #031540;
+            transform: scale(1.2) rotate(10deg);
+        }
+
+/* ===================================
+   Social Aside
+=================================== */
+aside.social {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 10px;
+    background: rgba(223, 189, 59, 0.3);
+    backdrop-filter: blur(6px);
+    border-radius: 12px 0 0 12px;
+    box-shadow: -4px 0 12px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+    aside.social a {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+        color: #031540;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+    }
+
+        aside.social a:hover {
+            color: #DFBD3B;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+        }
+
+/* ===================================
+   Scroll Top Button
+=================================== */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    background: #DFBD3B;
+    color: #031540;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+    #scrollTopBtn:hover {
+        background: #fff;
+        color: #031540;
+        transform: scale(1.2);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    }
+
+/* ===================================
+   Footer
+=================================== */
+.footer {
+    width: 100%;
+    padding: 15px 5%;
+    background: rgba(3, 21, 64, 0.95);
+    text-align: center;
+    color: #DFBD3B;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+}
+
+/* ===================================
+   Text Direction & Fonts
+=================================== */
+.arabic-text {
+    direction: rtl;
+    font-family: 'Poppins', sans-serif;
+}
+
+.english-text {
+    direction: ltr;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.mixed-text {
+    direction: rtl;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #eaeaea;
+}
+
+    .mixed-text .english-text {
+        direction: ltr;
+        font-weight: 600;
+        color: #ffd700;
+    }
+
+/* ===================================
+   Additional Utilities
+=================================== */
+::selection {
+    background: #DFBD3B;
+    color: #031540;
+}
+
+button, .btn {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    button:hover, .btn:hover {
+        transform: scale(1.05);
+    }
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+    a:hover {
+        color: #DFBD3B;
+    }
+
+.hidden {
+    display: none !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+/* Ensure home section content does not overflow */
+.home-content,
+.welcome-container {
+    max-width: 95%;
+}
+
+/* ===================================
+   Responsive Adjustments
+=================================== */
+@media (max-width: 1024px) {
+    .home-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .home-content h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .header .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgba(3,21,64,0.95);
+        width: 200px;
+        border-radius: 0 0 8px 8px;
+        padding: 10px 0;
+        z-index: 1200;
+    }
+
+        .header .navbar.active {
+            display: flex;
+        }
+
+        .header .navbar a {
+            margin: 10px 0;
+            text-align: center;
+            color: #fff;
+        }
+
+    .home-content h1 {
+        font-size: 2rem;
+    }
+
+    .home-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .welcome-message {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-content h1 {
+        font-size: 1.6rem;
+    }
+
+    .home-content h3 {
+        font-size: 0.95rem;
+    }
+
+    .welcome-message {
+        font-size: 0.85rem;
+    }
+}
