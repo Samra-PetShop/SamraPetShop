@@ -1,4 +1,21 @@
-﻿/* ===================================
+﻿
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@500;700&family=Cairo:wght@400;600;700&display=swap');
+
+
+:root {
+    --fs-logo: 1.75rem; /* Logo */
+    --fs-nav: 1rem; /* Navbar Links */
+    --fs-h1: 3rem; /* Main Title */
+    --fs-h3: 1.5rem; /* Subtitle / Section Heading */
+    --fs-welcome: 1.25rem; /* Welcome Message */
+    --fs-card-title: 1.25rem; /* Contact Card Title */
+    --fs-card-text: 1rem; /* Card Paragraph */
+    --fs-footer: 0.875rem; /* Footer */
+}
+
+
+
+/* ===================================
    Reset & Global
 =================================== */
 * {
@@ -8,7 +25,8 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', 'Montserrat', sans-serif;
+   
     line-height: 1.6;
     color: #f9f9f9;
     background: #031540;
@@ -40,7 +58,7 @@ body {
 
 /* Logo Text */
 .header .logo {
-    font-size: 1.5rem;
+    font-size: var(--fs-logo);
     font-weight: 700;
     color: #DFBD3B;
     text-decoration: none;
@@ -52,7 +70,8 @@ body {
     width: auto;
     margin-left: 2px; /* space from text */
     border-radius: 30px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  
+    box-shadow: 0 2px 8px rgba(0,0,0,0.9);
 }
 
 /* Navbar */
@@ -62,6 +81,7 @@ body {
 }
 
     .header .navbar a {
+        font-size: var(--fs-nav);
         text-decoration: none;
         color: #fff;
         font-weight: 500;
@@ -128,12 +148,12 @@ body {
 }
 
     .home-content h1 {
-        font-size: 3rem;
+        font-size: var(--fs-h1);
         margin-bottom: 15px;
     }
 
     .home-content h3 {
-        font-size: 1.5rem;
+        font-size: var(--fs-h3);
         margin-bottom: 25px;
     }
 
@@ -152,7 +172,7 @@ body {
     width: 100%;
     opacity: 0;
     transition: opacity 1s ease, transform 1s ease;
-    font-size: 1rem;
+    font-size: var(--fs-welcome);
     line-height: 1.6;
     margin-bottom: 15px;
 }
@@ -231,13 +251,13 @@ body {
     }
 
     .contact-card h3 {
-        font-size: 1.5rem;
+        font-size: var(--fs-card-title);
         color: #DFBD3B;
         margin-bottom: 15px;
     }
 
     .contact-card p {
-        font-size: 0.95rem;
+        font-size: var(--fs-card-text);
         margin: 6px 0;
         color: #eaeaea;
     }
@@ -311,10 +331,10 @@ aside.social {
     flex-direction: column;
     gap: 16px;
     padding: 10px;
-    background: rgba(223, 189, 59, 0.3);
+    background: rgba(223, 189, 50, 0.9);
     backdrop-filter: blur(6px);
     border-radius: 12px 0 0 12px;
-    box-shadow: -4px 0 12px rgba(0,0,0,0.3);
+    box-shadow: -4px 0 12px rgba(3, 21, 64, 0.95);
     z-index: 1000;
 }
 
@@ -331,7 +351,7 @@ aside.social {
 
         aside.social a:hover {
             color: #DFBD3B;
-            background: rgba(255, 255, 255, 0.2);
+            background: #f9f9f9;
             border-radius: 8px;
         }
 
@@ -372,7 +392,7 @@ aside.social {
     background: rgba(3, 21, 64, 0.95);
     text-align: center;
     color: #DFBD3B;
-    font-size: 0.9rem;
+    font-size: var(--fs-footer);
     box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
 }
 
@@ -381,12 +401,12 @@ aside.social {
 =================================== */
 .arabic-text {
     direction: rtl;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Cairo', sans-serif;
 }
 
 .english-text {
     direction: ltr;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .mixed-text {
@@ -456,15 +476,21 @@ a {
 =================================== */
 @media (max-width: 1024px) {
     .home-content h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     .home-content h3 {
-        font-size: 1.3rem;
+        font-size: 2rem;
     }
 }
 
 @media (max-width: 768px) {
+
+    :root {
+        --fs-h1: 2.25rem;
+        --fs-h3: 1.25rem;
+        --fs-welcome: 1rem;
+    }
     .header {
         padding: 15px 20px;
     }
@@ -496,29 +522,48 @@ a {
             color: #fff;
         }
 
-    .home-content h1 {
-        font-size: 2rem;
-    }
-
-    .home-content h3 {
-        font-size: 1.1rem;
-    }
-
-    .welcome-message {
-        font-size: 0.95rem;
-    }
+ 
 }
 
 @media (max-width: 480px) {
-    .home-content h1 {
-        font-size: 1.6rem;
+    :root {
+        --fs-h1: 1.75rem;
+        --fs-h3: 1rem;
+        --fs-welcome: 0.9rem;
     }
-
-    .home-content h3 {
-        font-size: 0.95rem;
-    }
-
-    .welcome-message {
-        font-size: 0.85rem;
-    }
+    
+   
 }
+
+
+.video-controls {
+    position: absolute;
+    bottom: 50px;
+    left: 20px; /* 👈 مثبتة على يمين الصفحة */
+    display: flex;
+    flex-direction: column; /* 👈 يخلي الأزرار فوق بعض */
+    gap: 10px;
+    z-index: 10;
+}
+
+
+
+.video-btn {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+    .video-btn:hover {
+        background: rgba(0, 0, 0, 0.85);
+    }
+

@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SAMRA PET SHOP</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  
     <!-- Boxicons -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
@@ -60,6 +58,15 @@
             </div>
         </div>
 
+        <!-- Video Controls -->
+        <div class="video-controls">
+            <button id="playPauseBtn" class="video-btn">
+                <i class='bx bx-pause'></i>
+            </button>
+            <button id="muteBtn" class="video-btn">
+                <i class='bx bx-volume-mute'></i>
+            </button>
+        </div>
 
 
 
@@ -77,15 +84,22 @@
         <!-- Home Content -->
         <div class="home-content">
 
-            <div>
 
-                <button id="unmuteBtn" class="unmute-btn">🔊 Unmute</button>
-            </div>
+
+
+
+
+
 
 
             <h1>
-                <span class="english-text inline-english">Samra PET Shop!</span>
+
                 <span class="arabic-text">مرحباً بكم في </span>
+            </h1>
+
+            <h1>
+                <span class="english-text inline-english">Samra PET Shop!</span>
+
             </h1>
 
             <h3 class="arabic-text">
@@ -140,6 +154,12 @@
         <a href="https://www.facebook.com/share/1FRSj7rCHK/?mibextid=wwXIfr"><i class="bx bxl-facebook"></i></a>
         <a href="https://www.instagram.com/samrapetshop?igsh=MXRsbzU3NHFjOGE0Zw%3D%3D&utm_source=qr"><i class="bx bxl-instagram"></i></a>
         <a href="https://wa.me/962792029400"><i class="bx bxl-whatsapp"></i></a>
+
+
+      
+
+
+
     </aside>
 
     <!-- Map -->
@@ -166,13 +186,36 @@
     <script src="script.js"></script>
     <script>
         const video = document.getElementById('homeVideo');
-        const btn = document.getElementById('unmuteBtn');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const muteBtn = document.getElementById('muteBtn');
 
-        btn.addEventListener('click', () => {
-            video.muted = false; // unmute
-            video.play();        // ensure it plays
-            btn.style.display = 'none'; // hide button after click
+        // Play / Pause Toggle
+        playPauseBtn.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+                playPauseBtn.innerHTML = "<i class='bx bx-pause'></i>";
+            } else {
+                video.pause();
+                playPauseBtn.innerHTML = "<i class='bx bx-play'></i>";
+            }
         });
+
+        // Mute / Unmute Toggle
+        muteBtn.addEventListener('click', () => {
+            video.muted = !video.muted;
+            muteBtn.innerHTML = video.muted
+                ? "<i class='bx bx-volume-mute'></i>"
+                : "<i class='bx bx-volume-full'></i>";
+        });
+
+
+
+
+
+
+
+
+
     </script>
 
 </body>
