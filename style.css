@@ -5,8 +5,8 @@
 :root {
     --fs-logo: 1.75rem; /* Logo */
     --fs-nav: 1rem; /* Navbar Links */
-    --fs-h1: 3rem; /* Main Title */
-    --fs-h3: 1.5rem; /* Subtitle / Section Heading */
+    --fs-h1: 2.8rem; /* Main Title */
+    --fs-h3: 1.4rem; /* Subtitle / Section Heading */
     --fs-welcome: 1.25rem; /* Welcome Message */
     --fs-card-title: 1.25rem; /* Contact Card Title */
     --fs-card-text: 1rem; /* Card Paragraph */
@@ -476,7 +476,7 @@ a {
 =================================== */
 @media (max-width: 1024px) {
     .home-content h1 {
-        font-size: 3rem;
+        font-size: 2.7rem;
     }
 
     .home-content h3 {
