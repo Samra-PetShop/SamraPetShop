@@ -487,9 +487,9 @@ a {
 @media (max-width: 768px) {
 
     :root {
-        --fs-logo: 1.5rem;
-        --fs-h1: 2.2rem;
-        --fs-h3: 1.2rem;
+        --fs-logo: 1.2rem;
+        --fs-h1: 2rem;
+        --fs-h3: 1rem;
         --fs-welcome: 1rem;
     }
     .header {
@@ -529,8 +529,8 @@ a {
 @media (max-width: 480px) {
     :root {
         --fs-logo: 1.2rem;
-        --fs-h1: 1.3rem;
-        --fs-h3: 1.1rem;
+        --fs-h1: 1.1rem;
+        --fs-h3: 1rem;
         --fs-welcome: 1rem;
     }
     
