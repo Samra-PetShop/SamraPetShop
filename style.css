@@ -40,7 +40,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 15px 50px;
+    padding: 20px 50px;
     background: rgba(3, 21, 64, 0.85);
     display: flex;
     justify-content: space-between;
@@ -476,11 +476,14 @@ a {
 =================================== */
 @media (max-width: 1024px) {
     .home-content h1 {
-        font-size: 2.7rem;
+        font-size: 2.5rem;
     }
 
     .home-content h3 {
         font-size: 2rem;
+    }
+    .header {
+        padding: 20px 25px;
     }
 }
 
@@ -493,7 +496,7 @@ a {
         --fs-welcome: 1rem;
     }
     .header {
-        padding: 15px 20px;
+        padding: 20px 25px;
     }
 
     .hamburger {
@@ -533,7 +536,9 @@ a {
         --fs-h3: 1rem;
         --fs-welcome: 1rem;
     }
-    
+    .header {
+        padding: 20px 25px;
+    }
    
 }
 
