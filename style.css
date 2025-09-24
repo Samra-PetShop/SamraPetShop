@@ -32,6 +32,76 @@ body {
     background: #031540;
 }
 
+
+
+
+
+
+/* ===================================
+   Services Section
+=================================== */
+.services {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    padding: 60px 20px;
+    background: #021133; /* darker than home for contrast */
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background: rgba(3, 21, 64, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    padding: 20px;
+    max-width: 400px;
+    flex: 1;
+    text-align: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+    .service-card:hover {
+        transform: translateY(-8px);
+        background: rgba(3, 21, 64, 1);
+    }
+
+    .service-card img {
+        width: 100%;
+        max-height: 200px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .service-card h3 {
+        font-size: 1.4rem;
+        color: #DFBD3B;
+        margin-bottom: 10px;
+    }
+
+    .service-card p {
+        font-size: 1rem;
+        color: #eaeaea;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ===================================
    Header
 =================================== */
@@ -114,6 +184,7 @@ body {
     align-items: center;
     overflow: hidden;
     padding: 20px;
+    padding-top:80px;
 }
 
 .bg-video {
@@ -181,6 +252,7 @@ body {
         direction: rtl;
         color: #DFBD3B;
         font-weight: 600;
+       
     }
 
     .welcome-message.english-text {
@@ -483,7 +555,7 @@ a {
         font-size: 2rem;
     }
     .header {
-        padding: 20px 25px;
+        padding: 15px 25px;
     }
 }
 
